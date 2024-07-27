@@ -5,6 +5,11 @@
     color: #232233;
     text-align: center;
     text-decoration: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.footer__resource:hover {
+    opacity: 0.5;
 }
 
 @media screen and (max-width: 1010px) {

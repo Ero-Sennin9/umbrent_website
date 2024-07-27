@@ -9,6 +9,13 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+
+.answers__open-button:hover {
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 500px) {

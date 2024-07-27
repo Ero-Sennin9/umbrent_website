@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" style="scroll-behavior: smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,7 +11,7 @@
 <body class="root">
 <div class="page">
     <header class="header">
-        <img class="header__logo" src="images/logo.svg" alt="логотип">
+        <a class="header__logo" href="#"></a>
         <nav class="header__navigation">
             <a class="header__nav-link" href="#instruction">Как это работает</a>
             <a class="header__nav-link" href="#about">О нас</a>
@@ -23,9 +23,7 @@
     <header class="header-mobile">
         <div class="header-mobile__frame">
             <button class="header-mobile__menu-button" type="button"></button>
-            <div class="header-mobile__logo">
-                <img class="header-mobile__logo-image" src="images/logo.svg" alt="логотип">
-            </div>
+            <a class="header-mobile__logo" href="#"></a>
         </div>
         <div class="menu">
             <button class="menu__close-button" type="button"></button>
@@ -45,8 +43,8 @@
                 <p class="intro__caption">Дождь в удовольствие!</p>
                 <h2 class="intro__text">Скачать приложение</h2>
                 <div class="intro__downloads">
-                    <img class="intro__download" src="images/google-play.png" alt="google play">
-                    <img class="intro__download" src="images/appstore.png" alt="appstore">
+                    <a class="intro__download" style="background-image: url('images/appstore.png')" href="#"></a>
+                    <a class="intro__download" style="background-image: url('images/google-play.png')" href="#"></a>
                 </div>
             </div>
         </div>
@@ -333,14 +331,14 @@
                 <div class="footer__icon">
                     <img class="footer__image" src="images/mail-icon.svg" alt="почта">
                 </div>
-                <a class="footer__resource">vsvodskiy@gmail.com</a>
+                <a class="footer__resource" href="#">vsvodskiy@gmail.com</a>
             </div>
             <div class="footer__separator"></div>
             <div class="footer__contact">
                 <div class="footer__icon">
                     <img class="footer__image" src="images/phone-icon-2.svg" alt="телефон">
                 </div>
-                <a class="footer__resource">+7-977-777-27-60</a>
+                <a class="footer__resource" href="#">+7-977-777-27-60</a>
             </div>
             <div class="footer__separator"></div>
             <div class="footer__contact">
@@ -351,7 +349,7 @@
             </div>
         </div>
     </footer>
-    <script defer src="pages/index.js"></script>
+    <script src="pages/index.js"></script>
 </div>
 </body>
 </html>

@@ -65,6 +65,7 @@
 @import url("../blocks/answers/__item/answers__item.css");
 @import url("../blocks/answers/__question/answers__question.css");
 @import url("../blocks/answers/__open-button/answers__open-button.css");
+@import url("../blocks/answers/__open-button/_active/answers__open-button_active.css");
 @import url("../blocks/answers/__question-text/answers__question-text.css");
 
 @import url("../blocks/footer/footer.css");

@@ -1,3 +1,12 @@
 .intro__download {
+    width: 106px;
+    height: 31px;
+    transition: opacity 0.5s ease-in-out;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
 
+.intro__download:hover {
+    opacity: 0.6;
 }

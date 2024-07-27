@@ -6,6 +6,7 @@ const answers = document.querySelectorAll('.answers__answer');
 for (let ind = 0; ind < openButtons.length; ++ind) {
     openButtons[ind].addEventListener('click', function (event) {
         answers[ind].classList.toggle('answers__answer_opened');
+        openButtons[ind].classList.toggle('answers__open-button_active');
     });
 }
 

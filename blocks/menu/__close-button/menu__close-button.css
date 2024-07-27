@@ -9,4 +9,10 @@
     background-size: contain;
     background-position: center;
     align-self: flex-end;
+    transition: opacity 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.menu__close-button:hover {
+    opacity: 0.6;
 }

@@ -8,4 +8,13 @@
     position: absolute;
     right: Calc(50% - 50px);
     top: -10px;
+    background-image: url("../../../images/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 91px 47px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.header-mobile__logo:hover {
+    opacity: 0.9;
 }

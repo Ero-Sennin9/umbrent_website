@@ -1,0 +1,11 @@
+.instruction__image {
+    width: 215.22px;
+    height: 439.9px;
+    margin: 75px Calc(100% * 73.78 / 1280) 0 70px;
+}
+
+@media screen and (max-width: 974px) {
+    .instruction__image {
+        margin: 25px 0 0;
+    }
+}

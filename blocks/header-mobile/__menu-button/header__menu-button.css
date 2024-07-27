@@ -1,0 +1,12 @@
+.header-mobile__menu-button {
+    border: none;
+    background-color: unset;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    background-image: url("../../../images/menu-icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0 0 0 10px;
+}

@@ -1,0 +1,11 @@
+.header-mobile__frame {
+    background-color: #FFFFFF;
+    width: Calc(100% * 343 / 375);
+    height: 40px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+}

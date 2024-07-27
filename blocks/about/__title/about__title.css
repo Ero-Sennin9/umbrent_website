@@ -1,0 +1,9 @@
+.about__title {
+    margin: 16px 16px 0;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 47px;
+    color: #232233;
+    text-transform: uppercase;
+    text-align: center;
+}

@@ -1,0 +1,12 @@
+.answers {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #FFFFFF;
+}
+
+@media screen and (min-width: 1280px) {
+    .answers {
+        width: 1280px;
+    }
+}

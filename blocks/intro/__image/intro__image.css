@@ -1,0 +1,12 @@
+.intro__image {
+    width: 208px;
+    height: 425px;
+    margin: 37px Calc((100% - 610px) * 265 / (1280 - 610)) 0 0;
+    /*margin: 37px Calc(265.52% / 1280 * 100) 0 0;*/
+}
+
+@media screen and (max-width: 800px) {
+    .intro__image {
+        margin: 50px 0 27px;
+    }
+}

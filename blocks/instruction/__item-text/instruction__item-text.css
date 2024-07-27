@@ -1,0 +1,14 @@
+.instruction__item-text {
+    margin: 0 16px 0 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #232233;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 500px) {
+    .instruction__item-text {
+        font-size: 20px;
+    }
+}

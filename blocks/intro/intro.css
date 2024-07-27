@@ -1,0 +1,23 @@
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 488px;
+    background-image: url("../../images/cover-intro.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@media screen and (min-width: 1280px) {
+    .intro {
+        width: 1280px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .intro {
+        flex-direction: column;
+        align-items: center;
+    }
+}

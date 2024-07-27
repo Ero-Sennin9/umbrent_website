@@ -1,0 +1,10 @@
+.dislocation__card-image {
+    scale: inherit;
+    margin: auto;
+}
+
+@media screen and (max-width: 400px) {
+    .dislocation__card-image {
+        scale: 0.93;
+    }
+}

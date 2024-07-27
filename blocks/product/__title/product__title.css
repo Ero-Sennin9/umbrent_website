@@ -1,0 +1,23 @@
+.product__title {
+    margin: 65px 0 0;
+    font-size: 32px;
+    line-height: 47.3px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    align-self: flex-start;
+    position: relative;
+}
+
+@media screen and (max-width: 1010px) {
+    .product__title {
+        margin: 45px 0 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .product__title {
+        margin: 20px 0 0;
+        left: Calc(-100% * 150 / 500 * 2 / 3);
+    }
+}

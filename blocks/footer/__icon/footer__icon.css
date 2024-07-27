@@ -1,0 +1,28 @@
+.footer__icon {
+    margin: 0 15px 0 0;
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50px;
+    background-color: #396AD5;
+    display: flex;
+}
+
+@media screen and (max-width: 1010px) {
+    .footer__icon {
+        height: 100px;
+        margin: 0 15px 0 8.5px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footer__icon {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 365px) {
+    .footer__icon {
+        margin: 6px;
+        height: 60px;
+    }
+}

@@ -1,0 +1,35 @@
+.product__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+.product__column:nth-of-type(3) .product__card:first-of-type {
+    margin: 162.3px 0 0;
+}
+
+@media screen and (max-width: 1010px) {
+    .product__column {
+        width: 200px;
+    }
+
+    .product__column:nth-of-type(3) .product__card:first-of-type {
+        margin: 116.3px 0 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .product__column {
+        width: Calc(100% * 500 / 800);
+    }
+
+    .product__column:nth-of-type(3) .product__card:first-of-type {
+        margin: 33px 0 0;
+    }
+
+    .product__column:nth-of-type(3) {
+        margin: 0 0 25px;
+    }
+}

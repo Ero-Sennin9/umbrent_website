@@ -1,0 +1,12 @@
+.answers__item {
+    position: relative;
+    /*height: min-content;*/
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 15px;
+    width: 100%;
+}
+
+.answers__item:last-of-type {
+    margin: 0;
+}

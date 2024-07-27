@@ -1,0 +1,4 @@
+.footer__image {
+    width: calc(100% / 2);
+    margin: auto;
+}

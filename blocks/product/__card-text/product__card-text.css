@@ -1,0 +1,11 @@
+.product__card-text {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 500px) {
+    line-height: 24px;
+}

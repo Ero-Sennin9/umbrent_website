@@ -1,0 +1,19 @@
+.answers__open-button {
+    border: none;
+    background-color: unset;
+    padding: 0;
+    margin: 0 0 0 16px;
+    min-width: 30px;
+    min-height: 24px;
+    background-image: url("../../../images/open-button.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+@media screen and (max-width: 500px) {
+    .answers__open-button {
+        min-width: 26px;
+        min-height: 21px;
+    }
+}

@@ -1,0 +1,19 @@
+.product__image {
+    margin: 12px 0 0;
+    /*width: 100%;*/
+}
+
+@media screen and (max-width: 1010px) {
+    .product__image {
+        margin: 0;
+        scale: 0.85;
+        transform-box: content-box;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .product__image {
+        margin: 33px 0 0;
+        scale: 1;
+    }
+}

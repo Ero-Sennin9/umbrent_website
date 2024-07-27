@@ -1,0 +1,12 @@
+.dislocation__card {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+    .dislocation__card {
+        width: 140px;
+    }
+}

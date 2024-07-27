@@ -1,0 +1,7 @@
+.dislocation__card-image-frame {
+    width: 100%;
+    aspect-ratio: 145/141;
+    background-color: #396AD5;
+    border-radius: 75px/73px;
+    display: flex;
+}

@@ -1,0 +1,27 @@
+.dislocation__cards {
+    width: Calc(100% * 770 / 1280);
+    min-height: 378px;
+    aspect-ratio: 770 / 433;
+    margin: 19px 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    /*grid-template-rows: repeat(2, min-content);*/
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+@media screen and (max-width: 800px) {
+    .dislocation__cards {
+        width: Calc((100% - 150px * 2) / 3 + 150px * 2);
+        grid-template-columns: repeat(2, min-content);
+        min-height: 600px;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .dislocation__cards {
+        width: unset;
+        justify-content: space-evenly;
+    }
+}

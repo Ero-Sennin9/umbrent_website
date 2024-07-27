@@ -1,0 +1,19 @@
+.footer__resource {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 37.5px;
+    color: #232233;
+    text-align: center;
+}
+
+@media screen and (max-width: 1010px) {
+    .footer__resource {
+        margin: 0 14px 0 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footer__resource {
+        font-size: 18px;
+    }
+}

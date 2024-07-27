@@ -1,0 +1,25 @@
+.about__blocks {
+    margin: 30px 0 27px;
+    display: grid;
+    width: Calc(100% * 1219 / 1280);
+    grid-template-columns: 504fr 657fr;
+    grid-template-rows: repeat(2, min-content);
+    gap: 14px 9px;
+}
+
+.about__blocks .about__block:first-of-type {
+    grid-row: span 2;
+}
+
+@media screen and (max-width: 535px) {
+    .about__blocks {
+        grid-template-columns: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about__blocks {
+        width: unset;
+        margin: 30px 18px 27px;
+    }
+}

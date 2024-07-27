@@ -1,0 +1,10 @@
+.intro__downloads {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0 0;
+}
+
+
+@media screen and (max-width: 500px) {
+    margin: 10px 0 0;
+}

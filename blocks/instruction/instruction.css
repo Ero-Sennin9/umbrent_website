@@ -1,0 +1,19 @@
+.instruction {
+    min-height: 550px;
+    display: flex;
+    justify-content: center;
+    background-color: #FFFFFF;
+}
+
+@media screen and (min-width: 1280px) {
+    .instruction {
+        width: 1280px;
+    }
+}
+
+@media screen and (max-width: 974px) {
+    .instruction {
+        flex-direction: column;
+        align-items: center;
+    }
+}

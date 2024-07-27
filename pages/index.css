@@ -1,0 +1,80 @@
+@import url("../blocks/page/page.css");
+@import url("../blocks/root/root.css");
+
+@import url("../blocks/header/header.css");
+@import url("../blocks/header/__logo/header__logo.css");
+@import url("../blocks/header/__navigation/header__navigation.css");
+@import url("../blocks/header/__nav-link/header__nav-link.css");
+
+@import url("../blocks/header-mobile/header-mobile.css");
+@import url("../blocks/header-mobile/__frame/header-mobile__frame.css");
+@import url("../blocks/header-mobile/__logo/header__logo.css");
+@import url("../blocks/header-mobile/__logo-image/header-mobile__logo-image.css");
+@import url("../blocks/header-mobile/__menu-button/header__menu-button.css");
+
+@import url("../blocks/intro/intro.css");
+@import url("../blocks/intro/__text/intro__text.css");
+@import url("../blocks/intro/__image/intro__image.css");
+@import url("../blocks/intro/__title/intro__title.css");
+@import url("../blocks/intro/__info/intro__info.css");
+@import url("../blocks/intro/__caption/intro__caption.css");
+@import url("../blocks/intro/__download/intro__download.css");
+@import url("../blocks/intro/__downloads/intro__downloads.css");
+@import url("../blocks/intro/__frame/intro_frame.css");
+
+@import url("../blocks/instruction/instruction.css");
+@import url("../blocks/instruction/__title/instruction__title.css");
+@import url("../blocks/instruction/__image/instruction__image.css");
+@import url("../blocks/instruction/__list/instruction__list.css");
+@import url("../blocks/instruction/__item/instruction__item.css");
+@import url("../blocks/instruction/__content/instruction__content.css");
+@import url("../blocks/instruction/__number/instruction__number.css");
+@import url("../blocks/instruction/__item-text/instruction__item-text.css");
+
+@import url("../blocks/product/product.css");
+@import url("../blocks/product/__image/product__image.css");
+@import url("../blocks/product/__title/product__title.css");
+@import url("../blocks/product/__column/product__column.css");
+@import url("../blocks/product/__card/product__card.css");
+@import url("../blocks/product/__card-text/product__card-text.css");
+@import url("../blocks/product/__card-image/product__card-image.css");
+@import url("../blocks/product/__card-title/product__card-title.css");
+@import url("../blocks/product/_theme/product_theme_light.css");
+
+@import url("../blocks/about/about.css");
+@import url("../blocks/about/__title/about__title.css");
+@import url("../blocks/about/__block-text/about__block-text.css");
+@import url("../blocks/about/__caption/about__caption.css");
+@import url("../blocks/about/__blocks/about__blocks.css");
+@import url("../blocks/about/__block/about__block.css");
+@import url("../blocks/about/__block-title/about__block-title.css");
+
+@import url("../blocks/dislocation/dislocation.css");
+@import url("../blocks/dislocation/__title/dislocaiton__title.css");
+@import url("../blocks/dislocation/__card/dislocation__card.css");
+@import url("../blocks/dislocation/__cards/dislocation__cards.css");
+@import url("../blocks/dislocation/__card-image/dislocation__card-image.css");
+@import url("../blocks/dislocation/__card-text/dislocation__card-text.css");
+@import url("../blocks/dislocation/__card-image-frame/dislocation__card-image-frame.css");
+
+@import url("../blocks/answers/answers.css");
+@import url("../blocks/answers/__title/answers__title.css");
+@import url("../blocks/answers/__list/answers__list.css");
+@import url("../blocks/answers/__answer/answers__answer.css");
+@import url("../blocks/answers/__item/answers__item.css");
+@import url("../blocks/answers/__question/answers__question.css");
+@import url("../blocks/answers/__open-button/answers__open-button.css");
+@import url("../blocks/answers/__question-text/answers__question-text.css");
+
+@import url("../blocks/footer/footer.css");
+@import url("../blocks/footer/__title/footer__title.css");
+@import url("../blocks/footer/__caption/footer__caption.css");
+@import url("../blocks/footer/__contact/footer__contact.css");
+@import url("../blocks/footer/__contacts/footer__contacts.css");
+@import url("../blocks/footer/__separator/footer__separator.css");
+@import url("../blocks/footer/__image/footer__image.css");
+@import url("../blocks/footer/__icon/footer__icon.css");
+@import url("../blocks/footer/__resource/footer_resource.css");
+
+/*@import url("../vendor/Poppins.css");*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');

@@ -1,0 +1,11 @@
+.header-mobile__logo {
+    height: 60px;
+    width: 100px;
+    display: flex;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    right: Calc(50% - 50px);
+    top: -10px;
+}

@@ -1,0 +1,27 @@
+.footer__title {
+    margin: 41px 0 0;
+    font-size: 32px;
+    font-weight: 600;
+    color: #396AD5;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1010px) {
+    .footer__title {
+        margin: 26px 0 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer__title {
+        font-size: 30px;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .footer__title {
+        margin: 26px 8px 0;
+        text-align: center;
+    }
+}

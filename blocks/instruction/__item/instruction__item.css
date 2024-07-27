@@ -1,0 +1,16 @@
+.instruction__item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 70px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 0 28px;
+    box-sizing: border-box;
+    padding: 6px 0;
+}
+
+.instruction__item:last-of-type {
+    margin: 0;
+}

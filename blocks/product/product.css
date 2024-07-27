@@ -1,0 +1,32 @@
+.product {
+    height: 528px;
+    background-image: url("../../images/cover-station.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #FFFFFF;
+}
+
+@media screen and (min-width: 1280px) {
+    .product {
+        width: 1280px;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    .product {
+        justify-content: space-around;
+        height: 488px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .product {
+        flex-direction: column;
+        height: unset;
+        align-items: center;
+        /*height: 488px;*/
+    }
+}

@@ -61,6 +61,7 @@
 @import url("../blocks/answers/__title/answers__title.css");
 @import url("../blocks/answers/__list/answers__list.css");
 @import url("../blocks/answers/__answer/answers__answer.css");
+@import url("../blocks/answers/__answer/_active/answers__answer_opened.css");
 @import url("../blocks/answers/__item/answers__item.css");
 @import url("../blocks/answers/__question/answers__question.css");
 @import url("../blocks/answers/__open-button/answers__open-button.css");
@@ -75,6 +76,12 @@
 @import url("../blocks/footer/__image/footer__image.css");
 @import url("../blocks/footer/__icon/footer__icon.css");
 @import url("../blocks/footer/__resource/footer_resource.css");
+
+@import url("../blocks/menu/menu.css");
+@import url("../blocks/menu/_active/menu_active.css");
+@import url("../blocks/menu/__link/menu__link.css");
+@import url("../blocks/menu/__close-button/menu__close-button.css");
+@import url("../blocks/menu/__links/menu__links.css");
 
 /*@import url("../vendor/Poppins.css");*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');

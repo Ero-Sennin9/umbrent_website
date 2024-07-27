@@ -13,11 +13,11 @@
     <header class="header">
         <img class="header__logo" src="images/logo.svg" alt="логотип">
         <nav class="header__navigation">
-            <a class="header__nav-link" href="#">Как это работает</a>
-            <a class="header__nav-link" href="#">О нас</a>
-            <a class="header__nav-link" href="#">Партнеры</a>
-            <a class="header__nav-link" href="#">FAQ</a>
-            <a class="header__nav-link" href="#">Контакты</a>
+            <a class="header__nav-link" href="#instruction">Как это работает</a>
+            <a class="header__nav-link" href="#about">О нас</a>
+            <a class="header__nav-link" href="#dislocation">Партнеры</a>
+            <a class="header__nav-link" href="#answers">FAQ</a>
+            <a class="header__nav-link" href="#footer">Контакты</a>
         </nav>
     </header>
     <header class="header-mobile">
@@ -26,6 +26,16 @@
             <div class="header-mobile__logo">
                 <img class="header-mobile__logo-image" src="images/logo.svg" alt="логотип">
             </div>
+        </div>
+        <div class="menu">
+            <button class="menu__close-button" type="button"></button>
+            <nav class="menu__links">
+                <a class="menu__link" href="#instruction">Как это работает</a>
+                <a class="menu__link" href="#about">О нас</a>
+                <a class="menu__link" href="#dislocation">Партнеры</a>
+                <a class="menu__link" href="#answers">FAQ</a>
+                <a class="menu__link" href="#footer">Контакты</a>
+            </nav>
         </div>
     </header>
     <section class="intro">
@@ -42,7 +52,7 @@
         </div>
         <img class="intro__image" src="images/phone-intro.png" alt="iphone">
     </section>
-    <section class="instruction">
+    <section class="instruction" id="instruction">
         <img class="instruction__image" src="images/phone-instruction.png" alt="iphone">
         <div class="instruction__content">
             <h2 class="instruction__title">
@@ -153,7 +163,7 @@
             </div>
         </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
         <h2 class="about__title">О нас</h2>
         <p class="about__caption">
             Мы - команда Umbrent, которая создала уникальную систему аренды зонтов для городских жителей
@@ -182,7 +192,7 @@
             </div>
         </div>
     </section>
-    <section class="dislocation">
+    <section class="dislocation" id="dislocation">
         <h2 class="dislocation__title">Где нас искать</h2>
         <div class="dislocation__cards">
             <div class="dislocation__card">
@@ -223,7 +233,7 @@
             </div>
         </div>
     </section>
-    <section class="answers">
+    <section class="answers" id="answers">
         <h2 class="answers__title">Частые вопросы</h2>
         <div class="answers__list">
             <div class="answers__item">
@@ -315,7 +325,7 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <h2 class="footer__title">Остались вопросы?</h2>
         <p class="footer__caption">Напишите нам!</p>
         <div class="footer__contacts">
@@ -337,10 +347,11 @@
                 <div class="footer__icon">
                     <img class="footer__image" src="images/telegram-icon.svg" alt="telegram">
                 </div>
-                <a class="footer__resource">@umbrent_support</a>
+                <a class="footer__resource" href="https://t.me/umbrent_support">@umbrent_support</a>
             </div>
         </div>
     </footer>
+    <script defer src="pages/index.js"></script>
 </div>
 </body>
 </html>

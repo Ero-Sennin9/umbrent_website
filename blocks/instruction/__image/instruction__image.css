@@ -6,6 +6,6 @@
 
 @media screen and (max-width: 974px) {
     .instruction__image {
-        margin: 25px 0 0;
+        margin: 0 0 25px;
     }
 }

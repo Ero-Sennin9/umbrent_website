@@ -4,6 +4,7 @@
     line-height: 37.5px;
     color: #232233;
     text-align: center;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1010px) {

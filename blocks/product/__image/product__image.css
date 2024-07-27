@@ -13,7 +13,7 @@
 
 @media screen and (max-width: 800px) {
     .product__image {
-        margin: 33px 0 0;
+        margin: 10px 0 0;
         scale: 1;
     }
 }

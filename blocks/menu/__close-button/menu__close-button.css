@@ -1,0 +1,12 @@
+.menu__close-button {
+    border: none;
+    background-color: unset;
+    padding: 0;
+    min-width: 35px;
+    min-height: 35px;
+    background-image: url("../../../images/close-button.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    align-self: flex-end;
+}

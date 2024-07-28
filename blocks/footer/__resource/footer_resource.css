@@ -1,5 +1,5 @@
 .footer__resource {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 600;
     line-height: 37.5px;
     color: #232233;
@@ -12,7 +12,13 @@
     opacity: 0.5;
 }
 
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1080px) {
+    .footer__resource {
+        margin: 0 14px 0 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
     .footer__resource {
         margin: 0 14px 0 0;
     }
@@ -23,3 +29,4 @@
         font-size: 18px;
     }
 }
+

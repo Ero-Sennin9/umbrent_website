@@ -7,20 +7,20 @@
     display: flex;
 }
 
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1080px) {
     .footer__icon {
         height: 100px;
         margin: 0 15px 0 8.5px;
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .footer__icon {
         margin: 10px;
     }
 }
 
-@media screen and (max-width: 365px) {
+@media screen and (max-width: 370px) {
     .footer__icon {
         margin: 6px;
         height: 60px;

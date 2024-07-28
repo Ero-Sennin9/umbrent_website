@@ -6,7 +6,7 @@
     text-transform: uppercase;
 }
 
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1080px) {
     .footer__title {
         margin: 26px 0 0;
     }

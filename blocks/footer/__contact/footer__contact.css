@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1080px) {
     .footer__contact {
         height: 117px;
         width: 100%;
@@ -18,5 +18,11 @@
 @media screen and (max-width: 400px) {
     .footer__contact {
         height: unset;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footer__contact {
+        justify-content: flex-start;
     }
 }

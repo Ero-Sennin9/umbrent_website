@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1080px) {
     .footer__contacts {
         aspect-ratio: unset;
         flex-direction: column;

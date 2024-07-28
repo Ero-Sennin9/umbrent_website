@@ -4,7 +4,7 @@
     background-color: #6C6C72;
 }
 
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1080px) {
     .footer__separator {
         width: 117px;
         height: 4px;

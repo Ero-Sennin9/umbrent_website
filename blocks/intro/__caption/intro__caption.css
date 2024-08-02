@@ -8,6 +8,7 @@
 
 @media screen and (max-width: 500px) {
     .intro__caption {
+        font-size: 18px;
         margin: 16px 0 0;
     }
 }

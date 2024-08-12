@@ -8,6 +8,7 @@
     color: rgba(0, 0, 0, 0.47);
     transition: opacity 0.4s ease-in-out;
     cursor: pointer;
+    text-align: left;
 }
 
 .answers__question-text:hover {

@@ -16,7 +16,7 @@
 @media screen and (max-width: 500px) {
     .contacts__contact-text {
         color: #FFFFFF;
-        font-size: 8px;
-        line-height: 21px;
+        font-size: 12px;
+        line-height: 30px;
     }
 }

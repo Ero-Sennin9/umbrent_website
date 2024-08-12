@@ -1,0 +1,13 @@
+.intro__price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    max-width: 300px;
+}
+
+@media screen and (max-width: 1030px) {
+    .intro__price {
+        margin: 20px 0 0;
+    }
+}

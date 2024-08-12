@@ -1,4 +1,7 @@
 .instruction__number {
+    position: absolute;
+    left: -20px;
+    top: 31px;
     min-width: 56px;
     aspect-ratio: 56/53;
     background-color: #396AD5;
@@ -8,5 +11,11 @@
     line-height: 53px;
     color: #FFFFFF;
     text-align: center;
-    margin: 0 15px 0 16px;
+    /*margin: 0 15px 0 16px;*/
+}
+
+@media screen and (max-width: 974px) {
+    .instruction__number {
+        left: 0;
+    }
 }

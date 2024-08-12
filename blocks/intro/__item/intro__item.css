@@ -1,0 +1,16 @@
+.intro__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 28px;
+}
+
+.intro__item:last-of-type {
+    margin: 0;
+}
+
+@media screen and (max-width: 1030px ){
+    .intro__item {
+        margin: 0 0 23px;
+    }
+}

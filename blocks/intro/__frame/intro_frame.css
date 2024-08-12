@@ -1,13 +1,13 @@
 .intro__frame {
     height: 352px;
     width: 402px;
-    margin: 37px 0 0 Calc((100% - 610px - 36px) * (162 - 36) / (1280 - 610 - 36) + 36px);
+    margin: 56px 0 0 Calc((100% - 610px - 36px - 300px) * (167 - 36) / (1280 - 610 - 36 - 300) + 36px);
     box-sizing: border-box;
     border: 18px solid #FFFFFF;
     display: grid;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1030px) {
     .intro__frame {
        margin: 27px 0 0 36px;
     }

@@ -1,5 +1,28 @@
 .instruction__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
     margin: 0;
     padding: 0;
     width: 100%;
 }
+
+
+@media screen and (max-width: 1100px) {
+    .instruction__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .instruction__list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .instruction__list {
+        width: Calc(100% * 340 / 370);
+    }
+}
+

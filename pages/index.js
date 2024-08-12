@@ -2,8 +2,14 @@
 
 const openButtons = document.querySelectorAll('.answers__open-button');
 const answers = document.querySelectorAll('.answers__answer');
+const questions = document.querySelectorAll('.answers__question-text');
 
 for (let ind = 0; ind < openButtons.length; ++ind) {
+    questions[ind].addEventListener('click', function (event) {
+        answers[ind].classList.toggle('answers__answer_opened');
+        openButtons[ind].classList.toggle('answers__open-button_active');
+    });
+
     openButtons[ind].addEventListener('click', function (event) {
         answers[ind].classList.toggle('answers__answer_opened');
         openButtons[ind].classList.toggle('answers__open-button_active');
@@ -26,11 +32,17 @@ const mediaQueryProduct = window.matchMedia('screen and (max-width: 800px)');
 function productMobile() {
     titleUmbrella.after(imageUmbrella);
     titleStation.after(imageStation);
+    imageStation.src = "images/station-mobile.png"
+    imageStation.width = "300"
+    imageStation.style = ""
 }
 
 function productDesktop() {
     secondCardUmbrella.after(imageUmbrella);
     thirdCardStation.after(imageStation);
+    imageStation.src = "images/station.png"
+    imageStation.width = "320"
+    imageStation.style = "left: -20px"
 }
 
 function mediaProduct(mediaQuery) {
@@ -94,3 +106,28 @@ for (let ind = 0; ind < menuLinks.length; ++ind) {
     });
 
 }
+
+// changing contact icons beside header
+
+const mediaQueryContacts = window.matchMedia('screen and (max-width: 800px)');
+const contactsIcons = document.querySelectorAll('.contacts__contact-icon');
+const contactImages = [{
+    "desktop": "images/phone-icon-mini.svg", "mobile": "images/phone-icon-mini-mobile.svg",
+}, {
+    "desktop": "images/mail-icon-mini.svg", "mobile": "images/mail-icon-mini-mobile.svg",
+}]
+
+function mediaContacts(mediaQuery) {
+    for (let ind = 0; ind < contactsIcons.length; ++ind) {
+        if (mediaQuery.matches) {
+            contactsIcons[ind].src = contactImages[ind]["mobile"]
+        } else {
+            contactsIcons[ind].src = contactImages[ind]["desktop"]
+        }
+
+    }
+}
+
+mediaContacts(mediaQueryContacts);
+mediaQueryContacts.addEventListener('change', mediaContacts);
+

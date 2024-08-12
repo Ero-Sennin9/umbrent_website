@@ -1,0 +1,12 @@
+.contacts__contact-icon {
+    margin: 0 6px 0 0;
+    width: 22px;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+    .contacts__contact-icon {
+        width: 12px;
+    }
+}

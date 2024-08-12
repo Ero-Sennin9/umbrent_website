@@ -1,0 +1,22 @@
+.contacts__contact-text {
+    margin: 0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 38px;
+    /*padding: 0;*/
+}
+
+@media screen and (max-width: 800px) {
+    .contacts__contact-text {
+        color: #FFFFFF;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contacts__contact-text {
+        color: #FFFFFF;
+        font-size: 8px;
+        line-height: 21px;
+    }
+}

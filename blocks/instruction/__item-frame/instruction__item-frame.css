@@ -1,0 +1,9 @@
+.instruction__item-frame {
+    margin: 0 0 12px;
+    display: flex;
+    min-width: 102px;
+    width: 102px;
+    aspect-ratio: 1;
+    border-radius: 51px;
+    background-color: #D9D9D9;
+}

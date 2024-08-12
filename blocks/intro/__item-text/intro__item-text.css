@@ -1,0 +1,22 @@
+.intro__item-text {
+    margin: 0 0 20px;
+    color: #FFFFFF;
+    font-size: 27px;
+    line-height: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media screen and (max-width: 1030px) {
+    .intro__item-text {
+        margin: 0 0 13px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .intro__item-text {
+        font-size: 22px;
+        line-height: 32px;
+    }
+}

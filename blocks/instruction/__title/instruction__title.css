@@ -1,19 +1,19 @@
 .instruction__title {
     position: relative;
-    right: 27px;
-    margin: 0 0 51px;
+    /*right: 27px;*/
+    margin: 0 0 20px;
     font-weight: 600;
     font-size: 32px;
     line-height: 47.3px;
     color: #232233;
     text-transform: uppercase;
-    text-align: center;
 }
 
 @media screen and (max-width: 974px) {
     .instruction__title {
         position: static;
         margin: 0 0 20px;
+        text-align: center;
     }
 }
 

@@ -1,9 +1,19 @@
 .answers__question-text {
+    background: unset;
+    border: unset;
+    padding: 0;
     margin: 0;
     font-size: 24px;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.47);
+    transition: opacity 0.4s ease-in-out;
+    cursor: pointer;
 }
+
+.answers__question-text:hover {
+   opacity: 0.6;
+}
+
 
 @media screen and (max-width: 500px) {
     .answers__question-text {

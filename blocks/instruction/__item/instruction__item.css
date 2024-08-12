@@ -1,14 +1,17 @@
 .instruction__item {
+    position: relative;
     list-style: none;
+    flex-direction: column;
     display: flex;
     align-items: center;
-    border-radius: 10px;
     width: 100%;
     min-height: 70px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 0 0 28px;
+    /*border-radius: 10px;*/
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    margin: 0;
     box-sizing: border-box;
-    padding: 6px 0;
+    padding: 8px 0;
+    /*flex-wrap: wrap;*/
 }
 
 .instruction__item:last-of-type {

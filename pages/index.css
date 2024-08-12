@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 @import url("../blocks/page/page.css");
 @import url("../blocks/root/root.css");
 
@@ -8,6 +5,12 @@
 @import url("../blocks/header/__logo/header__logo.css");
 @import url("../blocks/header/__navigation/header__navigation.css");
 @import url("../blocks/header/__nav-link/header__nav-link.css");
+
+@import url("../blocks/contacts/contacts.css");
+@import url("../blocks/contacts/__contact/contacts__contact.css");
+@import url("../blocks/contacts/__contact-text/contacts__contact-text.css");
+@import url("../blocks/contacts/__contact-icon/contacts__contact-icon.css");
+
 
 @import url("../blocks/header-mobile/header-mobile.css");
 @import url("../blocks/header-mobile/__frame/header-mobile__frame.css");
@@ -24,6 +27,11 @@
 @import url("../blocks/intro/__downloads/intro__downloads.css");
 @import url("../blocks/intro/__frame/intro_frame.css");
 
+@import url("../blocks/intro/__price/intro__price.css");
+@import url("../blocks/intro/__item/intro__item.css");
+@import url("../blocks/intro/__item-text/intro__item-text.css");
+@import url("../blocks/intro/__item-block-text/intro__item-block-text.css");
+
 @import url("../blocks/instruction/instruction.css");
 @import url("../blocks/instruction/__title/instruction__title.css");
 @import url("../blocks/instruction/__image/instruction__image.css");
@@ -32,6 +40,9 @@
 @import url("../blocks/instruction/__content/instruction__content.css");
 @import url("../blocks/instruction/__number/instruction__number.css");
 @import url("../blocks/instruction/__item-text/instruction__item-text.css");
+@import url("../blocks/instruction/__item-image/instruction__item-image.css");
+@import url("../blocks/instruction/__item-frame/instruction__item-frame.css");
+
 
 @import url("../blocks/product/product.css");
 @import url("../blocks/product/__image/product__image.css");
@@ -86,3 +97,4 @@
 @import url("../blocks/menu/__close-button/menu__close-button.css");
 @import url("../blocks/menu/__links/menu__links.css");
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');

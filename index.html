@@ -10,6 +10,16 @@
 </head>
 <body class="root">
 <div class="page">
+    <div class="contacts">
+        <div class="contacts__contact">
+            <img class="contacts__contact-icon" src="images/phone-icon-mini.svg" alt="телефон">
+            <a class="contacts__contact-text">+7 977 777 27 60</a>
+        </div>
+        <div class="contacts__contact">
+            <img class="contacts__contact-icon" src="images/mail-icon-mini.svg" alt="почта">
+            <a class="contacts__contact-text">vzvodskiy@gmail.com</a>
+        </div>
+    </div>
     <header class="header">
         <a class="header__logo" href="."></a>
         <nav class="header__navigation">
@@ -48,6 +58,16 @@
                 </div>
             </div>
         </div>
+        <div class="intro__price">
+            <div class="intro__item">
+                <p class="intro__item-text">Сначала</p>
+                <p class="intro__item-block-text">60 минут/100 ₽</p>
+            </div>
+            <div class="intro__item">
+                <p class="intro__item-text">Затем, каждые</p>
+                <p class="intro__item-block-text">24 часа/+100 ₽ </p>
+            </div>
+        </div>
         <img class="intro__image" src="images/phone-intro.png" alt="iphone">
     </section>
     <section class="instruction" id="instruction">
@@ -59,26 +79,48 @@
             <ul class="instruction__list">
                 <li class="instruction__item">
                     <div class="instruction__number">1</div>
+                    <div class="instruction__item-frame">
+                        <img class="instruction__item-image" src="favicon.svg" width="57" alt="иконка">
+                    </div>
                     <p class="instruction__item-text">
-                        Установите приложение и зарегистри&shy;руйтесь
+                        На карте нажмите на ближайшую станцию
                     </p>
                 </li>
                 <li class="instruction__item">
                     <div class="instruction__number">2</div>
+                    <div class="instruction__item-frame">
+                        <img class="instruction__item-image" src="images/map.svg" alt="карта" style="left: 5px; top: 5px">
+                    </div>
                     <p class="instruction__item-text">
-                        Найдите в приложении ближайшую станцию
+                        Постройте маршрут до станции и дойдите до неё
                     </p>
                 </li>
                 <li class="instruction__item">
                     <div class="instruction__number">3</div>
+                    <div class="instruction__item-frame">
+                        <img class="instruction__item-image" src="images/qr-phone.svg" alt="телефон">
+                    </div>
                     <p class="instruction__item-text">
-                        Подойдите к станции и отсканируйте QR-код
+                        Подойте к станции и сканируй QR-код
                     </p>
                 </li>
                 <li class="instruction__item">
                     <div class="instruction__number">4</div>
+                    <div class="instruction__item-frame">
+                        <img class="instruction__item-image" src="images/station-umbrella.svg" alt="станция и зонт" style="scale: 0.7">
+                    </div>
                     <p class="instruction__item-text">
-                        Через 10 секунд заберите свой зонт из ячейки
+                        Через 10 секунд забери свой зонт из ячейки
+                    </p>
+                </li>
+                <li class="instruction__item">
+                    <div class="instruction__number">5</div>
+                    <div class="instruction__item-frame">
+                        <img class="instruction__item-image" src="images/hand-over.svg" alt="сдача зонта" style="scale: 0.95; top: 2px">
+                    </div>
+                    <p class="instruction__item-text">
+                        Чтобы сдать зонт, нажмите "Сдать", отсканируйте QR-код ближайшей станции, дождитесь открытия
+                        ячейки и вставьте зонт
                     </p>
                 </li>
             </ul>
@@ -110,7 +152,7 @@
                     Вы можете обратиться по любому вопрому
                 </p>
             </div>
-            <img class="product__image" src="images/station.png" alt="станция">
+            <img class="product__image" src="images/station.png" width="320" alt="станция" style="left: -20px">
         </div>
         <div class="product__column">
             <div class="product__card">
@@ -236,7 +278,7 @@
         <div class="answers__list">
             <div class="answers__item">
                 <div class="answers__question">
-                    <h3 class="answers__question-text">Как взять зонт?</h3>
+                    <button class="answers__question-text" type="button">Как взять зонт?</button>
                     <button class="answers__open-button" type="button"></button>
                 </div>
                 <p class="answers__answer">
@@ -250,7 +292,7 @@
             </div>
             <div class="answers__item">
                 <div class="answers__question">
-                    <h3 class="answers__question-text">Сколько стоит аренда?</h3>
+                    <button class="answers__question-text">Сколько стоит аренда?</button>
                     <button class="answers__open-button" type="button"></button>
                 </div>
                 <p class="answers__answer">
@@ -259,7 +301,7 @@
             </div>
             <div class="answers__item">
                 <div class="answers__question">
-                    <h3 class="answers__question-text">Сколько зонтов можно взять одновременно?</h3>
+                    <button class="answers__question-text">Сколько зонтов можно взять одновременно?</button>
                     <button class="answers__open-button" type="button"></button>
                 </div>
                 <p class="answers__answer">
@@ -273,7 +315,7 @@
         <div class="answers__list">
             <div class="answers__item">
                 <div class="answers__question">
-                    <h3 class="answers__question-text">Терминал не работает</h3>
+                    <button class="answers__question-text">Терминал не работает</button>
                     <button class="answers__open-button" type="button"></button>
                 </div>
                 <p class="answers__answer">
@@ -283,7 +325,7 @@
             </div>
             <div class="answers__item">
                 <div class="answers__question">
-                    <h3 class="answers__question-text">QR-код не считывается</h3>
+                    <button class="answers__question-text">QR-код не считывается</button>
                     <button class="answers__open-button" type="button"></button>
                 </div>
                 <p class="answers__answer">
@@ -293,7 +335,7 @@
             </div>
             <div class="answers__item">
                 <div class="answers__question">
-                    <h3 class="answers__question-text">В станции закончились зонты</h3>
+                    <button class="answers__question-text">В станции закончились зонты</button>
                     <button class="answers__open-button" type="button"></button>
                 </div>
                 <p class="answers__answer">
@@ -302,7 +344,7 @@
             </div>
             <div class="answers__item">
                 <div class="answers__question">
-                    <h3 class="answers__question-text">Аренда началась, но станции не выдала зонт</h3>
+                    <button class="answers__question-text">Аренда началась, но станции не выдала зонт</button>
                     <button class="answers__open-button" type="button"></button>
                 </div>
                 <p class="answers__answer">
@@ -312,7 +354,7 @@
             </div>
             <div class="answers__item">
                 <div class="answers__question">
-                    <h3 class="answers__question-text">Потерял зонт/сломал/ хочу оставить себе</h3>
+                    <button class="answers__question-text">Потерял зонт/сломал/хочу оставить себе</button>
                     <button class="answers__open-button" type="button"></button>
                 </div>
                 <p class="answers__answer">
@@ -330,14 +372,14 @@
                 <div class="footer__icon">
                     <img class="footer__image" src="images/mail-icon.svg" alt="почта">
                 </div>
-                <a class="footer__resource" href="#">vzvodskiy@gmail.com</a>
+                <a class="footer__resource">vzvodskiy@gmail.com</a>
             </div>
             <div class="footer__separator"></div>
             <div class="footer__contact">
                 <div class="footer__icon">
                     <img class="footer__image" src="images/phone-icon-2.svg" alt="телефон">
                 </div>
-                <a class="footer__resource" href="#">+7-977-777-27-60</a>
+                <a class="footer__resource">+7-977-777-27-60</a>
             </div>
             <div class="footer__separator"></div>
             <div class="footer__contact">

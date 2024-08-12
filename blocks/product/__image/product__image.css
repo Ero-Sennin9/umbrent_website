@@ -1,5 +1,6 @@
 .product__image {
     margin: 12px 0 0;
+    position: relative;
     /*width: 100%;*/
 }
 

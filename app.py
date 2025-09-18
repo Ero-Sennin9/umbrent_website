@@ -1,42 +1,27 @@
 import os
 import sys
 import logging
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, request, jsonify
 from dotenv import load_dotenv
 
 load_dotenv()
 
-# Configure logging to stderr with immediate flushing
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(sys.stderr)  # Log to stderr
-    ]
+    handlers=[logging.StreamHandler(sys.stderr)]
 )
-
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
 
-# Custom filter to flush after each log
-class FlushingHandler(logging.StreamHandler):
-    def emit(self, record):
-        super().emit(record)
-        self.flush()
-
-
-# Replace default handler with flushing handler
-for handler in logging.root.handlers[:]:
-    logging.root.removeHandler(handler)
-
-flushing_handler = FlushingHandler(sys.stderr)
-flushing_handler.setFormatter(logging.Formatter(
-    '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-))
-logging.root.addHandler(flushing_handler)
-logging.root.setLevel(logging.INFO)
+# Обработка WebDAV методов чтобы избежать блокировок
+@app.before_request
+def handle_webdav_methods():
+    if request.method in ['PROPFIND', 'OPTIONS', 'PROPPATCH', 'MKCOL', 'LOCK', 'UNLOCK']:
+        logger.warning(f"Blocked WebDAV method: {request.method} from {request.remote_addr}")
+        return jsonify({"error": "Method not allowed"}), 405
 
 
 @app.route('/')
@@ -57,11 +42,17 @@ def health_check():
     try:
         with open('static/index.html', 'r'):
             pass
-        logger.info('Health check passed')
         return {"status": "healthy", "message": "OK"}, 200
     except Exception as e:
         logger.error(f'Health check failed: {str(e)}')
         return {"status": "unhealthy", "error": str(e)}, 500
+
+
+# Явно обрабатываем OPTIONS для CORS
+@app.route('/', methods=['OPTIONS'])
+@app.route('/<path:path>', methods=['OPTIONS'])
+def handle_options(path=None):
+    return '', 200
 
 
 if __name__ == '__main__':
@@ -70,15 +61,17 @@ if __name__ == '__main__':
 
     logger.info(f'Starting Flask server on port {os.getenv("PORT", 443)}')
 
-    # Configure Flask built-in logger to use stderr
-    import flask.cli
+    # Используем production WSGI server вместо development server
+    from werkzeug.serving import run_simple
+    from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
-    flask.cli.show_server_banner = lambda *args: None
+    application = DispatcherMiddleware(app)
 
-    app.run(
-        host='0.0.0.0',
+    run_simple(
+        hostname='0.0.0.0',
         port=int(os.getenv('PORT', 443)),
+        application=application,
         ssl_context=(ssl_cert, ssl_key),
-        # Force immediate flushing
-        debug=False  # debug=False for production
+        threaded=True,  # Многопоточность
+        processes=1  # Но один процесс для стабильности
     )

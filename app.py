@@ -80,5 +80,4 @@ if __name__ == '__main__':
         application=application,
         ssl_context=(ssl_cert, ssl_key),
         threaded=True,
-        threads=4
     )

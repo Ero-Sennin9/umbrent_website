@@ -21,7 +21,10 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 def handle_webdav_methods():
     if request.method in ['PROPFIND', 'OPTIONS', 'PROPPATCH', 'MKCOL', 'LOCK', 'UNLOCK']:
         logger.warning(f"Blocked WebDAV method: {request.method} from {request.remote_addr}")
-        return jsonify({"error": "Method not allowed"}), 405
+        # Создаем ответ и завершаем обработку
+        response = jsonify({"error": "Method not allowed"})
+        response.status_code = 405
+        return response
 
 
 @app.route('/')
@@ -52,7 +55,11 @@ def health_check():
 @app.route('/', methods=['OPTIONS'])
 @app.route('/<path:path>', methods=['OPTIONS'])
 def handle_options(path=None):
-    return '', 200
+    response = jsonify({"message": "OK"})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', '*')
+    response.headers.add('Access-Control-Allow-Methods', '*')
+    return response, 200
 
 
 if __name__ == '__main__':
@@ -72,6 +79,6 @@ if __name__ == '__main__':
         port=int(os.getenv('PORT', 443)),
         application=application,
         ssl_context=(ssl_cert, ssl_key),
-        threaded=True,  # Многопоточность
-        processes=1  # Но один процесс для стабильности
+        threaded=True,
+        processes=4
     )

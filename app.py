@@ -15,16 +15,15 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
-
-# Обработка WebDAV методов чтобы избежать блокировок
-@app.before_request
-def handle_webdav_methods():
-    if request.method in ['PROPFIND', 'OPTIONS', 'PROPPATCH', 'MKCOL', 'LOCK', 'UNLOCK']:
-        logger.warning(f"Blocked WebDAV method: {request.method} from {request.remote_addr}")
-        # Создаем ответ и завершаем обработку
-        response = jsonify({"error": "Method not allowed"})
-        response.status_code = 405
-        return response
+# ЗАКОММЕНТИРОВАТЬ или УДАЛИТЬ этот блок для отключения блокировки WebDAV
+# @app.before_request
+# def handle_webdav_methods():
+#     if request.method in ['PROPFIND', 'OPTIONS', 'PROPPATCH', 'MKCOL', 'LOCK', 'UNLOCK']:
+#         logger.warning(f"Blocked WebDAV method: {request.method} from {request.remote_addr}")
+#         # Создаем ответ и завершаем обработку
+#         response = jsonify({"error": "Method not allowed"})
+#         response.status_code = 405
+#         return response
 
 
 @app.route('/')

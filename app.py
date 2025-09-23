@@ -15,27 +15,25 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
-# removed blocking webdav methods
-# @app.before_request
-# def handle_webdav_methods():
-#     if request.method in ['PROPFIND', 'OPTIONS', 'PROPPATCH', 'MKCOL', 'LOCK', 'UNLOCK']:
-#         logger.warning(f"Blocked WebDAV method: {request.method} from {request.remote_addr}")
-#         # Создаем ответ и завершаем обработку
-#         response = jsonify({"error": "Method not allowed"})
-#         response.status_code = 405
-#         return response
 
-
-@app.route('/')
+@app.route('/', methods=['GET', 'PROPFIND', 'PROPPATCH', 'MKCOL', 'LOCK', 'UNLOCK'])
 def serve_index():
-    logger.info('Serving index.html')
-    return send_from_directory('static', 'index.html')
+    if request.method == 'GET':
+        logger.info('Serving index.html')
+        return send_from_directory('static', 'index.html')
+    else:
+        logger.info(f'Handling WebDAV method: {request.method}')
+        return '', 200
 
 
-@app.route('/<path:path>')
+@app.route('/<path:path>', methods=['GET', 'PROPFIND', 'PROPPATCH', 'MKCOL', 'LOCK', 'UNLOCK'])
 def serve_static(path):
-    logger.info(f'Serving static file: {path}')
-    return send_from_directory('static', path)
+    if request.method == 'GET':
+        logger.info(f'Serving static file: {path}')
+        return send_from_directory('static', path)
+    else:
+        logger.info(f'Handling WebDAV method: {request.method} for path: {path}')
+        return '', 200
 
 
 @app.route('/health')
@@ -75,7 +73,7 @@ if __name__ == '__main__':
 
     run_simple(
         hostname='0.0.0.0',
-        port=int(os.getenv('PORT', 443)),
+        port=int(os.getenv("PORT", 443)),
         application=application,
         ssl_context=(ssl_cert, ssl_key),
         threaded=True,

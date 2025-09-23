@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
-# ЗАКОММЕНТИРОВАТЬ или УДАЛИТЬ этот блок для отключения блокировки WebDAV
+# removed blocking webdav methods
 # @app.before_request
 # def handle_webdav_methods():
 #     if request.method in ['PROPFIND', 'OPTIONS', 'PROPPATCH', 'MKCOL', 'LOCK', 'UNLOCK']:

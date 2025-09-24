@@ -179,6 +179,7 @@ async def not_found_handler(request: Request, exc):
     """
     return JSONResponse(content=html_content, status_code=404, media_type="text/html")
 
+
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
     """Глобальный обработчик исключений"""

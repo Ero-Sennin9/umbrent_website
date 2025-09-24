@@ -1,80 +1,99 @@
 import os
-import sys
 import logging
-from flask import Flask, send_from_directory, request, jsonify
+from fastapi import FastAPI, HTTPException
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
+import uvicorn
 
 load_dotenv()
 
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[logging.StreamHandler(sys.stderr)]
 )
 logger = logging.getLogger(__name__)
 
-app = Flask(__name__, static_folder='static', template_folder='templates')
+app = FastAPI(title="WebDAV Server", docs_url=None, redoc_url=None)
+
+# Настройка CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-@app.route('/', methods=['GET', 'PROPFIND', 'PROPPATCH', 'MKCOL', 'LOCK', 'UNLOCK'])
-def serve_index():
-    if request.method == 'GET':
-        logger.info('Serving index.html')
-        return send_from_directory('static', 'index.html')
-    else:
-        logger.info(f'Handling WebDAV method: {request.method}')
-        return '', 200
+@app.get("/")
+async def serve_index():
+    """Главная страница - отдаем index.html"""
+    logger.info('Serving index.html')
+    return FileResponse('static/index.html')
 
 
-@app.route('/<path:path>', methods=['GET', 'PROPFIND', 'PROPPATCH', 'MKCOL', 'LOCK', 'UNLOCK'])
-def serve_static(path):
-    if request.method == 'GET':
-        logger.info(f'Serving static file: {path}')
-        return send_from_directory('static', path)
-    else:
+@app.api_route("/{path:path}", methods=["GET", "PROPFIND", "PROPPATCH", "MKCOL", "LOCK", "UNLOCK"])
+async def serve_static_or_handle_webdav(path: str):
+    """Обработка статических файлов и WebDAV методов"""
+    if path == "health":
+        # Перенаправляем health check на специальный endpoint
+        return await health_check()
+
+    if path.startswith("static/"):
+        path = path[7:]
+
+    file_path = f"static/{path}" if path else "static/index.html"
+
+    if not os.path.exists(file_path):
+        logger.warning(f"File not found: {file_path}")
+        raise HTTPException(status_code=404, detail="File not found")
+
+    if os.path.isdir(file_path):
+        file_path = os.path.join(file_path, "index.html")
+        if not os.path.exists(file_path):
+            raise HTTPException(status_code=404, detail="Directory index not found")
+
+    if request.method != "GET":
         logger.info(f'Handling WebDAV method: {request.method} for path: {path}')
-        return '', 200
+        return JSONResponse(content={"message": "WebDAV method handled"}, status_code=200)
+
+    logger.info(f'Serving static file: {path}')
+    return FileResponse(file_path)
 
 
-@app.route('/health')
-def health_check():
+@app.get("/health")
+async def health_check():
+    """Health check endpoint"""
     logger.info('Health check requested')
     try:
-        with open('static/index.html', 'r'):
-            pass
-        return {"status": "healthy", "message": "OK"}, 200
+        if os.path.exists('static/index.html'):
+            return {"status": "healthy", "message": "OK"}
+        else:
+            logger.error('Health check failed: static/index.html not found')
+            raise HTTPException(status_code=500, detail="Static files not available")
     except Exception as e:
         logger.error(f'Health check failed: {str(e)}')
-        return {"status": "unhealthy", "error": str(e)}, 500
+        raise HTTPException(status_code=500, detail=str(e))
 
 
-# Явно обрабатываем OPTIONS для CORS
-@app.route('/', methods=['OPTIONS'])
-@app.route('/<path:path>', methods=['OPTIONS'])
-def handle_options(path=None):
-    response = jsonify({"message": "OK"})
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    response.headers.add('Access-Control-Allow-Headers', '*')
-    response.headers.add('Access-Control-Allow-Methods', '*')
-    return response, 200
+# OPTIONS методы обрабатываются автоматически через CORS middleware
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     ssl_cert = os.getenv('SSL_CERT_PATH', '/app/certs/cert.pem')
     ssl_key = os.getenv('SSL_KEY_PATH', '/app/certs/key.pem')
+    port = int(os.getenv("PORT", 443))
 
-    logger.info(f'Starting Flask server on port {os.getenv("PORT", 443)}')
+    logger.info(f'Starting FastAPI server on port {port}')
 
-    # Используем production WSGI server вместо development server
-    from werkzeug.serving import run_simple
-    from werkzeug.middleware.dispatcher import DispatcherMiddleware
-
-    application = DispatcherMiddleware(app)
-
-    run_simple(
-        hostname='0.0.0.0',
-        port=int(os.getenv("PORT", 443)),
-        application=application,
-        ssl_context=(ssl_cert, ssl_key),
-        threaded=True,
+    uvicorn.run(
+        "app:app",
+        host="0.0.0.0",
+        port=port,
+        ssl_certfile=ssl_cert if os.path.exists(ssl_cert) else None,
+        ssl_keyfile=ssl_key if os.path.exists(ssl_key) else None,
+        reload=os.getenv('FASTAPI_DEBUG', 'False').lower() == 'true'
     )

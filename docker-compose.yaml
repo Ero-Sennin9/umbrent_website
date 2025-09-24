@@ -17,3 +17,5 @@ services:
     ports:
       - ${HTTPS_PORT}:${HTTPS_PORT}
       - ${HTTP_PORT}:${HTTP_PORT}
+    tty: true
+    stdin_open: true

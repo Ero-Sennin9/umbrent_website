@@ -5,10 +5,15 @@ import os
 
 app = FastAPI()
 
-# Создаем папку static если её нет
+# Логирование при старте
+@app.on_event("startup")
+async def startup_event():
+    print("🚀 Server starting up...")
+    print("📁 Current directory:", os.getcwd())
+    print("📁 Static files path:", os.path.abspath('static'))
+
 os.makedirs('static', exist_ok=True)
 
-# Монтируем статические файлы
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Создаем дефолтную страницу если её нет
@@ -33,17 +38,21 @@ if not os.path.exists('static/index.html'):
     <p>Сайт работает!</p>
 </body>
 </html>""")
+    print("📄 Created default index.html")
 
 @app.get("/")
 async def read_root():
+    print("📨 GET / request received")
     return FileResponse('static/index.html')
 
 @app.get("/health")
 async def health_check():
+    print("❤️ Health check request")
     return {"status": "healthy"}
 
 @app.get("/{path:path}")
 async def serve_static(path: str):
+    print(f"📨 GET /{path} request received")
     if path == "health":
         return await health_check()
     return FileResponse(f'static/{path}')

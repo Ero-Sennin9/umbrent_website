@@ -13,7 +13,21 @@ if __name__ == '__main__':
     if not ssl_certfile or not ssl_keyfile:
         http_port = int(os.getenv('HTTP_PORT', '80'))
         print(f"SSL certificates not found. Using HTTP on port {http_port}")
-        uvicorn.run(app, host='0.0.0.0', port=http_port)
+        uvicorn.run(
+            app,
+            host='0.0.0.0',
+            port=http_port,
+            log_level="info",
+            access_log=True
+        )
     else:
         print(f"Using HTTPS on port {https_port}")
-        uvicorn.run(app, host='0.0.0.0', port=https_port, ssl_certfile=ssl_certfile, ssl_keyfile=ssl_keyfile)
+        uvicorn.run(
+            app,
+            host='0.0.0.0',
+            port=https_port,
+            ssl_certfile=ssl_certfile,
+            ssl_keyfile=ssl_keyfile,
+            log_level="info",
+            access_log=True
+        )

@@ -16,3 +16,4 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - ${HTTPS_PORT}:${HTTPS_PORT}
+      - ${HTTP_PORT}:${HTTP_PORT}

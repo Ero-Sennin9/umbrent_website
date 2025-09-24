@@ -6,5 +6,6 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE $HTTPS_PORT
+EXPOSE $HTTP_PORT
 
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]

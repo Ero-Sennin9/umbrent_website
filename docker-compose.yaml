@@ -6,6 +6,13 @@ x-common: &common
     options:
       max-size: "100m"   # 100 МБ на файл
       max-file: "5"      # Хранить 10 файлов (1 ГБ всего)
+  volumes:
+    - type: bind
+      source: ${SSL_CERT_PATH}
+      target: /opt/${SSL_CERT_PATH}
+    - type: bind
+      source: ${SSL_KEY_PATH}
+      target: /opt/${SSL_KEY_PATH}
 
 
 services:

@@ -1,0 +1,18 @@
+User-agent: *
+
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+
+Disallow: /search/
+Disallow: /feed/
+Disallow: /comments/feed/
+
+Disallow: /*?
+
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.svg
+
+Sitemap: https://umbrent.ru/sitemap.xml

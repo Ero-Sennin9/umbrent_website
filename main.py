@@ -3,8 +3,8 @@ import uvicorn
 from app import app
 
 if __name__ == '__main__':
-    ssl_cert = os.getenv('SSL_CERT_PATH', '/app/certs/cert.pem')
-    ssl_key = os.getenv('SSL_KEY_PATH', '/app/certs/key.pem')
+    ssl_cert = "/opt/" + os.getenv('SSL_CERT_PATH', '/website/certs/cert.pem')
+    ssl_key = "/opt/" + os.getenv('SSL_KEY_PATH', '/website/certs/key.pem')
     https_port = int(os.getenv('HTTPS_PORT', '443'))
 
     ssl_certfile = ssl_cert if os.path.exists(ssl_cert) else None
